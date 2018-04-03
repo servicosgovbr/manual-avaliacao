@@ -11,18 +11,16 @@ Manual de uso da API de Avaliação e Acompanhamento
    :caption: Introdução
 
    apresentacao
-   acesso_as_apis
+   acessoasapis
 
 .. toctree::
    :maxdepth: 2
    :caption: APIs
 
    acompanhamento
-   concluir_reabrir_acompanhamento
+   concluirreabriracompanhamento
    avaliacao
    login
-
-
 
 
 Índices

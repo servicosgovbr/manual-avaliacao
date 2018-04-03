@@ -1,7 +1,7 @@
 Avaliação
 **********
 
-********
+Para que se possa fazer uma avaliação de serviço, é necessário primeiramente registrar a prestação enviando os acompanhamentos para a base de de avaliação.
 
 O login é o mesmo do editor de serviços e deve ser obtido da forma ....
 
