@@ -18,7 +18,6 @@ Manual de uso da API de Avaliação e Acompanhamento
    :caption: APIs
 
    acompanhamento
-   concluirreabriracompanhamento
    avaliacao
    login
 
