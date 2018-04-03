@@ -1,17 +1,17 @@
-﻿Acompanhamento
+﻿Concluir/reabrir uma prestação de serviço
 **************
 
-Para que se possa fazer uma avaliação de serviço, é necessário primeiramente registrar a prestação enviando os acompanhamentos para a base de de avaliação. Devem ser encaminhados cada fase e situações que ocorreram na prestação do serviço e ao final informar que a prestação foi concluída.
+Após o registro das etapas na base de avaliação e tendo sido encerrrado a prestação do serviço, deve-se informar a conclusão utilizando o método Realizar a conclusão ou reabertura de uma prestação de serviço, disponível no endpoint https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situcacao
 
-Registro de Acompanhamento
+
+Realizar a conclusão ou reabertura de uma prestação de serviço.
 ---------------------------
 
-O método Realizar o Registro de Acompanhamentos de um Serviços permite que sejam registradas na base as informações de acompanhamento do serviço como as etapas e suas situações. Após a execução da última etapa da prestação, o método Concluir/Reabrir Acompanhamento deve ser utilizado, para sinalizar a conlusão da prestação.
-
-Realizar o Registro de Acompanhamentos de um Serviços 
+O método Realizar a conclusão ou reabertura de uma prestação de serviço, permite registrar a conclusão, ou reabertura de uma prestação de serviço de um protocolo já registrado.
 
 .. note::
-   Esse é um método **POST** para envio de acompanhamentos dos serviços sendo executados.
+   Esse é um método **put** para registrar que um serviço foi concluído ou está sendo reaberto.
+
 
 Parâmetros de Entrada
 ++++++++++++++++++++++
@@ -19,44 +19,35 @@ Parâmetros de Entrada
 .. code-block:: json
    
    {
-     "cpfCidadao": "08254631654",
-     "dataEtapa": "10/10/2017",
-     "dataSituacaoEtapa": "10/10/2017",
-     "etapa": "Em Processamento.",
-     "orgao": "57842",
-     "protocolo": "0001AC.20171212",
-     "servico": "12014",
-     "situacaoEtapa": "Alguma descrição da situação."
+  "cpfCidadao": "08254631654",
+  "orgao": "57842",
+  "protocolo": "0001AC.20171212",
+  "servico": "12014",
+  "situacaoServico": "2"
    }
 
-cpfCidadao
-   Informe o CPF do cidadão que está executando o serviço.
+cpfCidadao (string)
+   CPF do cidadão sem formatação
 
-dataEtapa
-   Data da etapa que o serviço foi executado no formato "dd/mm/aaaa".
+orgao (string)
+   Identificado do Orgão
+protocolo (string)
+   Protocolo para identificar o serviço
 
-dataSituacaoEtapa
-   Data da etapa que o situaçao foi criado/alterado no formato "dd/mm/aaaa".
+servico (string)
+   Identificado do Serviço do Orgão
+situacaoServico (string, optional)
+   Situação atual do Serviço. 1 - Em Aberto, 2 - Concluído. = ['1', '2']
 
-etapa
-   Descriçao da etapa que o serviço se encontra na dataEtapa.
-
-orgao
-   ID do órgão no `Portal de Serviços`_. Caso não saiba qual ID do órgão consulte pela `API do Portal de Serviços`_
-
-Protocolo
-   Protocolo interno do órgão referente ao serviço sendo executado.
-
-servico
-   ID do serviço no `Portal de Serviços`_. Caso não saiba qual ID do serviço consulte pela `API do Portal de Serviços`_.
-
-situacaoEtapa
-   Descrição da etapa do serviço.
 
 Veja um exemplo de acesso utilizando o cURL_
 
+
+Cadu por favor inclua o exemplo!!!!!
+
 .. code-block:: console
 
+    
     $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
     --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \ 
     --header 'Accept: application/json' -d '{ \ 
