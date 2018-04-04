@@ -23,14 +23,14 @@ Parâmetros de Entrada
      "dataEtapa": "10/10/2017",
      "dataSituacaoEtapa": "10/10/2017",
      "etapa": "Em Processamento.",
-     "orgao": "57842",
+     "orgao": "36802",
      "protocolo": "0001AC.20171212",
-     "servico": "12014",
+     "servico": "47",
      "situacaoEtapa": "Alguma descrição da situação."
    }
 
 cpfCidadao
-   Informe o CPF do cidadão que está executando o serviço.
+   Informe o CPF do cidadão que está executando o serviço. Esse CPF vai ser validado na base 11.
 
 dataEtapa
    Data da etapa que o serviço foi executado no formato "dd/mm/aaaa".
@@ -43,6 +43,9 @@ etapa
 
 orgao
    ID do órgão no `Portal de Serviços`_. Caso não saiba qual ID do órgão consulte pela `API do Portal de Serviços`_
+
+.. attention::
+   Esse é o código do Portal de Serviços e **não** o do SIORG.
 
 Protocolo
    Protocolo interno do órgão referente ao serviço sendo executado.
@@ -64,9 +67,9 @@ Veja um exemplo de acesso utilizando o cURL_
      "dataEtapa": "10/10/2017", \ 
      "dataSituacaoEtapa": "10/10/2017", \ 
      "etapa": "Em Processamento.", \ 
-     "orgao": "57842", \ 
+     "orgao": "36802", \ 
      "protocolo": "0001AC.20171212", \ 
-     "servico": "12014", \ 
+     "servico": "47", \ 
      "situacaoEtapa": "Alguma descrição da situação." \ 
      }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
 
