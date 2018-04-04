@@ -1,54 +1,208 @@
-Avaliação
+﻿Avaliação
 **********
 
-Para que se possa fazer uma avaliação de serviço, é necessário primeiramente registrar a prestação enviando os acompanhamentos para a base de de avaliação.
+A avaliação dos serviços prestados permitirá que o governo tenha uma visão da opinião do cidadão sobre os serviços disponíveis.
 
-O login é o mesmo do editor de serviços e deve ser obtido da forma ....
+Duas formas estão disponíveis para o registro da opinão do cidadão. 
 
-Siga o manual de acesso ao portal disponível em ... :term:`API`
+Na primeira, um órgão de governo implementa o formulário de avaliação em seu próprio sistema e faz a chamada ao método Registrar Avaliação, o qual se encarregará em registrar o resultado da avaliação na base nacional de serviços e registrará a informação no e-OUV. 
+
+Na segunda, o órgão quer avaliar seu serviço, mas não quer desenvolver uma interface de avaliação, nesse caso ele deverá fazer a chamada ao método Obter Link do formulário de avaliação, que lhe fornecerá um endereço de um formulário que poderá ser embutido em seu sistema, usando um <iframe>, ou encaminhar o link recebido diretamente ao cidadão, seja por e-mail, seja por SMS.
+
+
+
+Registrar Avaliação
+---------------------
+
+O método Registrar Avaliação permite que sejam registradas informações na base as informações da avaliação de um serviço prestado ao cidadão e o registro de uma manifestação junto ao e-OUV.
+
+.. note::
+   Para registrar uma avaliação é necessário ter cadastrado previamente o acompanhamento da prestação do serviço.
+
+
+Parâmetros de Entrada
+++++++++++++++++++++++
 
 .. code-block:: json
- 
-   { "teste": "gesete" }
+   
+   {
+    "avaliacao": {
+    "cpfCidadao": "08254631654",
+    "etapa": "Análise Documental",
+    "orgao": "57842",
+    "protocolo": "0001AC.20171212",
+    "servico": "12014"
+  },
+  "avaliarComoAnonimo": "false",
+  "comentarioAvaliacao": "Atendimento rápido, pessoa qualificada e prestativa.",
+  "criteriosAvaliados": [
+    "1"
+  ],
+  "emailUsuario": "jose.silva@email.com.br",
+  "nomeUsuario": "José da Silva",
+  "outroCriterio": "Pontualidade",
+  "tipoAvaliacao": "4",
+  "tipoNota": "4"
+   }
 
-.. image:: _imagens/mylogo.svg
-   :height: 100px
-   :width: 200 px
-   :scale: 50 %
-   :alt: meu texto para a imagem
+
+Avaliacao {
+
+cpfCidadao (string)
+   CPF do cidadão sem formatação.
+
+etapa (string)
+   Descrição da etapa do Serviço.
+
+orgao (string)
+   Identificador do Orgão.
+
+protocolo (string)
+   Protocolo para identificar o serviço.
+
+servico (string)
+   Identificador do Serviço do Orgão.
+} 
+
+NotaAvaliacao {
+avaliacao (Avaliacao)
+   Dados sobre a avaliação.
+
+avaliarComoAnonimo (string)
+   Informar se a avaliação deve ser anônimo, true ou false. Caso false, o usuário não tera uma respota do e-OUV. = ['true', 'false'],
+
+comentarioAvaliacao (string, optional)
+   Descrição de 500 caracteres com comentário do usário sobre o serviço prestado.
+
+criteriosAvaliados (Array[string])
+   Códigos dos critérios selecionados pelo usuário na Avaliação. Quando Retornado na Consulta, vem com a Descrição e não com ID
+
+emailUsuario (string, optional)
+   Email do Usário. Utilizado para enviar ao sistema e-OUV. Não armazenado na API.
+
+nomeUsuario (string, optional)
+   Nome do Usário. Utilizado para enviar ao sistema e-OUV. Não armazenado na API.
+
+outroCriterio (string, optional)
+   Descrição de 30 caracteres quando o usário seleciona o Critério 'Outro'.
+
+tipoAvaliacao (string)
+   Tipo de Avaliação. = ['2 - Avaliar', '3 - Não Avaliar', '4 - Avaliar Depois']
+
+tipoNota (string)
+   Nota do usário.1 a 5, quanto maior melhor. = ['1', '2', '3', '4', '5']
+}
+
+.. note::
+   Para registrar as informações da avaliação o Tipo de Avaliação dever ser  2! As outras opções serão para implementações futuras de melhorias.
 
 
-.. code-block:: python
-   :emphasize-lines: 3,5
-
-   def some_function():
-       interesting = False
-       print 'This line is highlighted.'
-       print 'This one is not...'
-       print '...but this one is.'
+Veja um exemplo de acesso utilizando o cURL_
 
 .. code-block:: console
 
-    $ cd ~/portal.buildout
-    $ virtualenv py27
-    $ source py27/bin/activate
+    $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
+    --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \ 
+    --header 'Accept: application/json' -d '{ \ 
+     "cpfCidadao": "08254631654", \ 
+     "dataEtapa": "10/10/2017", \ 
+     "dataSituacaoEtapa": "10/10/2017", \ 
+     "etapa": "Em Processamento.", \ 
+     "orgao": "57842", \ 
+     "protocolo": "0001AC.20171212", \ 
+     "servico": "12014", \ 
+     "situacaoEtapa": "Alguma descrição da situação." \ 
+     }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
+
+Parâmetros de Saída
+++++++++++++++++++++++
+
+.. code-block:: json
+
+    { 
+      "message": "Operação realizada com sucessos!",
+      "status": "OK"
+    }
+
+messagem
+   Mensagem que descreve o status da operação.
+
+status
+   Status final da operação. Pode ser **OK** ou **ERROR** 
 
 .. warning::
-    **Não execute** o seu buildout com :command:`sudo`:
-    dessa forma, seu virtualenv será `ignorado <http://askubuntu.com/a/478001>`_ e ocorrerá todo tipo de erro de dependências da sua instância com as do Python do sistema.
+    Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
 
-Python_.
 
-.. _Python: http://www.python.org/
+
+Formulário de Avaliação
+---------------------
+
+O método Obter Link do formulário de avaliação disponibiliza um link para que o cidadão possa avaliar um serviço recebido pelo governo e registra na base as informações da avaliação de um serviço e se for o caso, faz o registro de uma manifestação junto ao e-OUV.
 
 .. note::
-    Apesar das instruções de instalação de bibliotecas e execução do :command:`virtualenv` sobre o Python da máquina,
-    para menor complexidade do procedimento é recomendado o uso de uma nova instalação de Python 2.7,
-    efetuando sobre ela esses procedimentos de instalação de bibliotecas e :command:`virtualenv`.
+   Para obter um formulário de avaliação de serviço é necessário ter cadastrado previamente o acompanhamento da prestação do serviço.
 
 
-CPF
-  CPF é isso aqui!
+Parâmetros de Entrada
+++++++++++++++++++++++
+
+.. code-block:: json
+   
+   {
+  "cpfCidadao": "08254631654",
+  "etapa": "Em Processamento.",
+  "orgao": "57842",
+  "protocolo": "0001AC.20171212",
+  "servico": "12014"
+   }
+
+cpfCidadao (string)
+   CPF do cidadão sem formatação.
+etapa (string)
+   Descrição da etapa do serviço.
+orgao (string)
+   Identificador do órgão.
+protocolo (string)
+   Protocolo para identificar o serviço.
+servico (string)
+   Identificador do serviço do órgão.
+
+Veja um exemplo de acesso utilizando o cURL_
+
+.. code-block:: console
+
+    $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
+    --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \ 
+    --header 'Accept: application/json' -d '{ \ 
+     "cpfCidadao": "08254631654", \ 
+     "dataEtapa": "10/10/2017", \ 
+     "dataSituacaoEtapa": "10/10/2017", \ 
+     "etapa": "Em Processamento.", \ 
+     "orgao": "57842", \ 
+     "protocolo": "0001AC.20171212", \ 
+     "servico": "12014", \ 
+     "situacaoEtapa": "Alguma descrição da situação." \ 
+     }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
+
+Parâmetros de Saída
+++++++++++++++++++++++
+
+.. code-block:: json
+
+    { 
+      "message": "Operação realizada com sucessos!",
+      "status": "OK"
+    }
+
+messagem
+   Mensagem que descreve o status da operação.
+
+status
+   Status final da operação. Pode ser **OK** ou **ERROR** 
+
+.. warning::
+    Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
 
 
 .. _`Portal de Serviços`: http://servicos.gov.br
