@@ -61,7 +61,7 @@ Veja um exemplo de acesso utilizando o cURL_
 .. code-block:: console
 
     $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
-    --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \ 
+    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \ 
     --header 'Accept: application/json' -d '{ \ 
      "cpfCidadao": "08254631654", \ 
      "dataEtapa": "10/10/2017", \ 
@@ -135,7 +135,7 @@ Veja um exemplo de acesso utilizando o cURL_
 .. code-block:: console
 
     $ curl -v -X PUT --header 'Content-Type: application/json;charset=UTF-8' -k \
-    --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \ 
+    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \ 
     --header 'Accept: application/json' -d '{ \ 
     "cpfCidadao": "08254631654", \ 
     "orgao": "57842", \ 
