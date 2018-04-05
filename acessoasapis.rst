@@ -5,13 +5,13 @@ Atualmente, há dois ambientes para o uso das APIs de Avaliação e Acompanhamen
 
 1. Testes e homologação:
 ----------------------------
-- Acompanhamento: https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento
-- Avaliação:   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao
+- Acompanhamento: https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/
+- Avaliação:   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/
 
 2. Produção:
 ----------------------------
-- Acompanhamento: https://acompanhamento.servicos.gov.br/api/acompanhamento
-- Avaliação:   https://avaliacao.servicos.gov.br/api/avaliacao​
+- Acompanhamento: https://acompanhamento.servicos.gov.br/api/acompanhamento/
+- Avaliação:   https://avaliacao.servicos.gov.br/api/avaliacao/
 
 
 As operações disponíveis estão descritas nos seguintes endereços abaixo:
