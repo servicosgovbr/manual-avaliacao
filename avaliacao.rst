@@ -169,6 +169,8 @@ Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apac
         }
     }
 
+.. attention:: 
+   **Não** está sendo considerado nesse exemplo questões como armazenar no código o login e senha de acesso as APIs. Por favor **utilize as melhores práticas de segurança** para armazenar e gerenciar as senhas.
 
 Parâmetros de Saída
 ++++++++++++++++++++++
