@@ -25,3 +25,12 @@ Avaliação:
 
 .. important::
    Os métodos das APIs necessitam autenticação para uso. A solicitação das credenciais de acesso para uso das APIs deve ser enviada para apis@serviços.gov.br, contendo as informações: órgão, serviço, nome da aplicação, telefone do responsável, email a ser utilizado como usuário das APIs.
+
+Deve-se usar o cabeçalho http **Authorization: Basic** em Base64 para passar as credenciais de autenticação nas chamadas das APIs. 
+
+Caso deseje você pode utilizar a página https://www.base64decode.org/ para decodificar e codificar o login e senha em Base64.
+ 
+.. code-block:: http
+   
+   Exemplo de login:senha `aladdin:opensesame` 
+   Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l

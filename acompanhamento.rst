@@ -6,7 +6,7 @@ Devem ser encaminhados cada fase e situação que ocorreram na prestação do se
 Registro de Acompanhamento
 ---------------------------
 
-O método Realizar o Registro de Acompanhamentos de um Serviços permite que sejam registradas na base as informações de acompanhamento do serviço como as etapas e suas situações. Após a execução da última etapa da prestação, o método Concluir/Reabrir Acompanhamento deve ser utilizado, para sinalizar a conlusão da prestação.
+O método Realizar o Registro de Acompanhamentos de um Serviços permite que sejam registradas na base as informações de acompanhamento do serviço como as etapas e suas situações. Após a execução da última etapa da prestação, o método Concluir/Reabrir Acompanhamento deve ser utilizado, para sinalizar a conclusão da prestação.
 
 Realizar o Registro de Acompanhamentos de um Serviços 
 
@@ -36,10 +36,10 @@ dataEtapa
    Data da etapa que o serviço foi executado no formato "dd/mm/aaaa".
 
 dataSituacaoEtapa
-   Data da etapa que o situaçao foi criado/alterado no formato "dd/mm/aaaa".
+   Data da etapa que o situação foi criado/alterado no formato "dd/mm/aaaa".
 
 etapa
-   Descriçao da etapa que o serviço se encontra na dataEtapa.
+   Descrição da etapa que o serviço se encontra na dataEtapa.
 
 orgao
    ID do órgão no `Portal de Serviços`_. Caso não saiba qual ID do órgão consulte pela `API do Portal de Serviços`_
@@ -95,7 +95,7 @@ status
 ﻿Concluir/reabrir uma prestação de serviço
 -----------------------------------------
 
-Após o registro das etapas na base de avaliação e tendo sido encerrrado a prestação do serviço, deve-se informar a conclusão utilizando o método Realizar a conclusão ou reabertura de uma prestação de serviço, disponível no endpoint https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situcacao
+Após o registro das etapas na base de avaliação e tendo sido encerrado a prestação do serviço, deve-se informar a conclusão utilizando o método Realizar a conclusão ou reabertura de uma prestação de serviço, disponível no endpoint https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situcacao
 
 Esse método permite registrar a conclusão ou reabertura de uma prestação de serviço de um protocolo já registrado.
 
@@ -117,15 +117,15 @@ Parâmetros de Entrada
    }
 
 cpfCidadao (string)
-   CPF do cidadão sem formatação
+   CPF do cidadão sem formatação.
 
 orgao (string)
-   Identificado do Orgão
+   Identificador do Órgão.
 protocolo (string)
-   Protocolo para identificar o serviço
+   Protocolo para identificar o serviço.
 
 servico (string)
-   Identificado do Serviço do Orgão
+   Identificador do Serviço do Órgão.
 situacaoServico (string, optional)
    Situação atual do Serviço. 1 - Em Aberto, 2 - Concluído. = ['1', '2']
 

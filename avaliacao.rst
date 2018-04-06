@@ -1,9 +1,9 @@
 ﻿Avaliação
 **********
 
-A avaliação dos serviços prestados permitirá que o governo tenha uma visão da opinião do cidadão sobre os serviços disponíveis.
+A avaliação dos serviços prestados permitirá que o governo tenha uma visão da opinião do cidadão sobre os serviços disponíveis podendo assim melhora-los até que atendam, de fato, ao que a população espera.
 
-Duas formas estão disponíveis para o registro da opinão do cidadão. 
+Duas formas estão disponíveis para o registro da opinião do cidadão. 
 
 Na primeira, um órgão de governo implementa o formulário de avaliação em seu próprio sistema e faz a chamada ao método Registrar Avaliação, o qual se encarregará em registrar o resultado da avaliação na base nacional de serviços e registrará a informação no e-OUV. 
 
@@ -59,10 +59,10 @@ protocolo (string)
    Protocolo para identificar o serviço.
 
 servico (string)
-   Identificador do Serviço do Orgão.
+   Identificador do Serviço do Órgão.
 
 avaliarComoAnonimo (string)
-   Informar se a avaliação deve ser anônimo, true ou false. Caso false, o usuário não tera uma resposta do e-OUV. = ['true', 'false'],
+   Informar se a avaliação deve ser anônimo, true ou false. Caso false, o usuário não terá uma resposta do e-OUV. = ['true', 'false'],
 
 comentarioAvaliacao (string, optional)
    Descrição de 500 caracteres com comentário do usuário sobre o serviço prestado.
