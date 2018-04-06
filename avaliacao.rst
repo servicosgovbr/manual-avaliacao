@@ -111,66 +111,7 @@ Veja um exemplo de acesso utilizando o cURL_
      "servico": "12014" \ 
      }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/'
 
-Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apache.
 
-.. code-block:: java
-
-    import org.apache.http.Header;
-    import org.apache.http.HeaderElement;
-    import org.apache.http.auth.AuthScope;
-    import org.apache.http.client.utils.URIBuilder;
-    import org.apache.http.auth.UsernamePasswordCredentials;
-    import org.apache.http.client.CredentialsProvider;
-    import org.apache.http.client.methods.CloseableHttpResponse;
-    import org.apache.http.client.methods.HttpGet;
-    import org.apache.http.impl.client.BasicCredentialsProvider;
-    import org.apache.http.impl.client.CloseableHttpClient;
-    import org.apache.http.impl.client.HttpClients;
-    import org.apache.http.util.EntityUtils;
-    import java.util.List;
-    import java.util.Arrays;
-    import java.net.URI;
-
-    public class BuscaAvaliacao {
-
-        public static void main(String[] args) throws Exception {
-            CredentialsProvider credsProvider = new BasicCredentialsProvider();
-            credsProvider.setCredentials(
-                    AuthScope.ANY,
-                    new UsernamePasswordCredentials("aladin@disney.com", "opensesame"));
-            CloseableHttpClient httpclient = HttpClients.custom()
-                    .setDefaultCredentialsProvider(credsProvider)
-                    .build();
-            try {
-                URIBuilder builder = new URIBuilder();
-                builder.setScheme("https").setHost("avaliacao.servicos.gov.br")
-                    .setPath("/api/avaliacao/")
-                    .setParameter("servico", "47")
-                    .setParameter("cpfCidadao", "08254631654")
-                    .setParameter("protocolo", "0001AC.20171212")
-                    .setParameter("orgao", "36802") 
-                    .setParameter("etapa", "Em Processamento.");
-
-                URI uri = builder.build();
-                HttpGet httpget = new HttpGet(uri);
-                System.out.println("----------------------------------------");
-                System.out.println("Executando request " + httpget.getRequestLine());
-                CloseableHttpResponse response = httpclient.execute(httpget);
-                try {
-                    System.out.println("----------------------------------------");
-                    System.out.println(response.getStatusLine());
-                    System.out.println(EntityUtils.toString(response.getEntity()));
-                } finally {
-                    response.close();
-                }
-            } finally {
-                httpclient.close();
-            }
-        }
-    }
-
-.. attention:: 
-   **Não** está sendo considerado nesse exemplo questões como armazenar no código o login e senha de acesso as APIs. Por favor **utilize as melhores práticas de segurança** para armazenar e gerenciar as senhas.
 
 Parâmetros de Saída
 ++++++++++++++++++++++
@@ -242,6 +183,69 @@ Veja um exemplo de acesso utilizando o cURL_
      "servico": "12014", \ 
      "situacaoEtapa": "Alguma descrição da situação." \ 
      }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
+
+
+Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apache.
+
+.. code-block:: java
+
+    import org.apache.http.Header;
+    import org.apache.http.HeaderElement;
+    import org.apache.http.auth.AuthScope;
+    import org.apache.http.client.utils.URIBuilder;
+    import org.apache.http.auth.UsernamePasswordCredentials;
+    import org.apache.http.client.CredentialsProvider;
+    import org.apache.http.client.methods.CloseableHttpResponse;
+    import org.apache.http.client.methods.HttpGet;
+    import org.apache.http.impl.client.BasicCredentialsProvider;
+    import org.apache.http.impl.client.CloseableHttpClient;
+    import org.apache.http.impl.client.HttpClients;
+    import org.apache.http.util.EntityUtils;
+    import java.util.List;
+    import java.util.Arrays;
+    import java.net.URI;
+
+    public class BuscaAvaliacao {
+
+        public static void main(String[] args) throws Exception {
+            CredentialsProvider credsProvider = new BasicCredentialsProvider();
+            credsProvider.setCredentials(
+                    AuthScope.ANY,
+                    new UsernamePasswordCredentials("aladin@disney.com", "opensesame"));
+            CloseableHttpClient httpclient = HttpClients.custom()
+                    .setDefaultCredentialsProvider(credsProvider)
+                    .build();
+            try {
+                URIBuilder builder = new URIBuilder();
+                builder.setScheme("https").setHost("avaliacao.servicos.gov.br")
+                    .setPath("/api/avaliacao/")
+                    .setParameter("servico", "47")
+                    .setParameter("cpfCidadao", "08254631654")
+                    .setParameter("protocolo", "0001AC.20171212")
+                    .setParameter("orgao", "36802") 
+                    .setParameter("etapa", "Em Processamento.");
+
+                URI uri = builder.build();
+                HttpGet httpget = new HttpGet(uri);
+                System.out.println("----------------------------------------");
+                System.out.println("Executando request " + httpget.getRequestLine());
+                CloseableHttpResponse response = httpclient.execute(httpget);
+                try {
+                    System.out.println("----------------------------------------");
+                    System.out.println(response.getStatusLine());
+                    System.out.println(EntityUtils.toString(response.getEntity()));
+                } finally {
+                    response.close();
+                }
+            } finally {
+                httpclient.close();
+            }
+        }
+    }
+
+.. attention:: 
+   **Não** está sendo considerado nesse exemplo questões como armazenar no código o login e senha de acesso as APIs. Por favor **utilize as melhores práticas de segurança** para armazenar e gerenciar as senhas.
+
 
 Parâmetros de Saída
 ++++++++++++++++++++++
