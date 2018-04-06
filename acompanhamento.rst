@@ -1,7 +1,7 @@
 ﻿Acompanhamento
 **************
 
-Devem ser encaminhados cada fase e situação que ocorreram na prestação do serviço e ao final informar que a prestação foi concluída.
+Devem ser encaminhados cada etapa e situação que ocorreram na prestação do serviço e ao final informar que a prestação foi concluída.
 
 Registro de Acompanhamento
 ---------------------------
