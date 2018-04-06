@@ -260,4 +260,13 @@ status
     Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
 
 
+O link da avaliação levará o cidadão para um formuláro de avaliação como o exibido abaixo:
+
+.. image:: _imagens/formulario.PNG
+   :height: 800 px
+   :width: 600 px
+   :scale: 100 %
+   :alt: Formulário de Avaliação de Serviços
+   :align: center
+
 .. _`Portal de Serviços`: http://servicos.gov.br
