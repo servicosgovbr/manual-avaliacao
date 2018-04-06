@@ -16,7 +16,7 @@ Fluxo simplificado das APIs
 .. image:: _imagens/fluxo_simplificado.svg
    :height: 100px
    :width: 200 px
-   :scale: 50 %
+   :scale: 75 %
    :alt: Fluxo Simplificado do funcionamento das APIs.
 
 .. important::
