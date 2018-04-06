@@ -19,7 +19,6 @@ Manual de uso da API de Avaliação e Acompanhamento
 
    acompanhamento
    avaliacao
-   login
 
 
 Índices
@@ -27,4 +26,4 @@ Manual de uso da API de Avaliação e Acompanhamento
 
 * :ref:`genindex`
 * :ref:`glossario`
-* :ref:`search`
+
