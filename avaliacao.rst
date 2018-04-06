@@ -189,7 +189,7 @@ Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apac
     import org.apache.http.auth.UsernamePasswordCredentials;
     import org.apache.http.client.CredentialsProvider;
     import org.apache.http.client.methods.CloseableHttpResponse;
-    import org.apache.http.client.methods.HttpGet;
+    import org.apache.http.client.methods.HttpPost;
     import org.apache.http.impl.client.BasicCredentialsProvider;
     import org.apache.http.impl.client.CloseableHttpClient;
     import org.apache.http.impl.client.HttpClients;
@@ -211,7 +211,7 @@ Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apac
             try {
                 URIBuilder builder = new URIBuilder();
                 builder.setScheme("https").setHost("avaliacao.servicos.gov.br")
-                    .setPath("/api/avaliacao/")
+                    .setPath("/api/avaliacao/formulario")
                     .setParameter("servico", "47")
                     .setParameter("cpfCidadao", "08254631654")
                     .setParameter("protocolo", "0001AC.20171212")
@@ -219,10 +219,10 @@ Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apac
                     .setParameter("etapa", "Em Processamento.");
 
                 URI uri = builder.build();
-                HttpGet httpget = new HttpGet(uri);
+                HttpPost httpPost = new HttpPost(uri);
                 System.out.println("----------------------------------------");
-                System.out.println("Executando request " + httpget.getRequestLine());
-                CloseableHttpResponse response = httpclient.execute(httpget);
+                System.out.println("Executando request " + httppost.getRequestLine());
+                CloseableHttpResponse response = httpclient.execute(httppost);
                 try {
                     System.out.println("----------------------------------------");
                     System.out.println(response.getStatusLine());
