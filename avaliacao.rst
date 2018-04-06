@@ -14,7 +14,7 @@ Na segunda, o órgão quer avaliar seu serviço, mas não quer desenvolver uma i
 Registrar Avaliação
 ---------------------
 
-O método Registrar Avaliação permite que sejam registradas informações na base as informações da avaliação de um serviço prestado ao cidadão e o registro de uma manifestação junto ao e-OUV.
+O método Registrar Avaliação permite que sejam registradas as informações da avaliação de um serviço prestado ao cidadão e o registro de uma manifestação junto ao e-OUV.
 
 .. note::
    Para registrar uma avaliação é necessário ter cadastrado previamente o acompanhamento da prestação do serviço.
@@ -46,8 +46,6 @@ Parâmetros de Entrada
    }
 
 
-Avaliacao {
-
 cpfCidadao (string)
    CPF do cidadão sem formatação.
 
@@ -62,36 +60,31 @@ protocolo (string)
 
 servico (string)
    Identificador do Serviço do Orgão.
-} 
-
-NotaAvaliacao {
-avaliacao (Avaliacao)
-   Dados sobre a avaliação.
 
 avaliarComoAnonimo (string)
-   Informar se a avaliação deve ser anônimo, true ou false. Caso false, o usuário não tera uma respota do e-OUV. = ['true', 'false'],
+   Informar se a avaliação deve ser anônimo, true ou false. Caso false, o usuário não tera uma resposta do e-OUV. = ['true', 'false'],
 
 comentarioAvaliacao (string, optional)
-   Descrição de 500 caracteres com comentário do usário sobre o serviço prestado.
+   Descrição de 500 caracteres com comentário do usuário sobre o serviço prestado.
 
 criteriosAvaliados (Array[string])
-   Códigos dos critérios selecionados pelo usuário na Avaliação. Quando Retornado na Consulta, vem com a Descrição e não com ID
+   Códigos dos critérios selecionados pelo usuário na Avaliação. Quando Retornado na Consulta, vem com a Descrição e não com ID.
 
 emailUsuario (string, optional)
-   Email do Usário. Utilizado para enviar ao sistema e-OUV. Não armazenado na API.
+   Email do usuário. Utilizado para enviar ao sistema e-OUV. Não armazenado na API.
 
 nomeUsuario (string, optional)
-   Nome do Usário. Utilizado para enviar ao sistema e-OUV. Não armazenado na API.
+   Nome do usuário. Utilizado para enviar ao sistema e-OUV. Não armazenado na API.
 
 outroCriterio (string, optional)
-   Descrição de 30 caracteres quando o usário seleciona o Critério 'Outro'.
+   Descrição de 30 caracteres quando o usuário seleciona o Critério 'Outro'.
 
 tipoAvaliacao (string)
    Tipo de Avaliação. = ['2 - Avaliar', '3 - Não Avaliar', '4 - Avaliar Depois']
 
 tipoNota (string)
-   Nota do usário.1 a 5, quanto maior melhor. = ['1', '2', '3', '4', '5']
-}
+   Nota do usuário.1 a 5, quanto maior melhor. = ['1', '2', '3', '4', '5']
+
 
 .. note::
    Para registrar as informações da avaliação o Tipo de Avaliação dever ser  2! As outras opções serão para implementações futuras de melhorias.
