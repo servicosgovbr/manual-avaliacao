@@ -263,8 +263,6 @@ status
 O link da avaliação levará o cidadão para um formuláro de avaliação como o exibido abaixo:
 
 .. image:: _imagens/formulario.PNG
-   :height: 800 px
-   :width: 600 px
    :scale: 100 %
    :alt: Formulário de Avaliação de Serviços
    :align: center
