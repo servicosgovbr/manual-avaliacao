@@ -9,3 +9,14 @@ Entre as informações mínimas que deverão estar disponíveis no painel para c
 
 Este projeto foi criado para ajudar na coleta destas informações para a disponibilização delas no painel de monitoramento, e para ajudar aos órgãos e entidades da administração pública federal direta, autárquica e fundacional a atenderem disposto no decreto e com isso melhorarem a qualidade do serviço prestado ao cidadão.
 
+
+Fluxo simplificado das APIs
+****************************
+
+.. image:: _imagens/fluxo_simplificado.svg
+   :scale: 100 %
+   :align: center
+   :alt: Fluxo Simplificado do funcionamento das APIs.
+
+.. important::
+   Para que seja chamado a API de **Avaliação** é necessário o envio prévio de um **Acompanhamento**. Não há possibilidade de uma avaliação sem um acompanhamento associado.
