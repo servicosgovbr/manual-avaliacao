@@ -24,16 +24,20 @@ O cidadão ao final da execução do serviço pode receber o link da sua avalia�
    :align: center
    :alt: Exemplo de email recebido com link.
 
+   Exemplo de email recebido com link
+
 .. attention::
     É **necessário que o próprio serviço** crie o texto e envie o email.
 
 
 Ou pode-se incluir na página do serviço o formulário já pronto e fornecido pela API de avaliação conforme imagem abaixo.
 
-.. image:: _imagens/formulario.PNG
+.. figure:: _imagens/formulario.PNG
    :scale: 100 %
    :alt: Formulário de Avaliação de Serviços
    :align: center
+
+   Formulário de Avaliação de Serviços
 
 Fluxo simplificado para o cidadão
 *********************************
