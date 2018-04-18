@@ -42,28 +42,21 @@ Ou pode-se incluir na página do serviço o formulário já pronto e fornecido p
 Fluxo simplificado para o cidadão
 *********************************
 
+O cidadão irá receber ou um email ou visualizar o formulário na própria página do serviço. A sugestão é a do envio do email para que o cidadão possa responder quando desejar.
+
 .. figure:: _imagens/fluxo_cidadao.png
    :scale: 100 %
    :align: center
    :alt: Primeira parte do fluxo para o cidadão.
 
-   Cidadão recebe a solicitação de avaliação.
+   Cidadão recebe a solicitação de avaliação ao final do serviço prestado.
 
 .. figure:: _imagens/fluxo_cidadao2.png
     :scale: 100 %
     :align: center
     :alt: Cidadão responde a avaliação.
 
-    Cidadão responde a avaliação
-
-Ou pode-se incluir na página do serviço o formulário já pronto e fornecido pela API de avaliação conforme imagem abaixo.
-
-.. image:: _imagens/formulario.PNG
-   :scale: 100 %
-   :alt: Formulário de Avaliação de Serviços
-   :align: center
-
-
+    Cidadão responde a avaliação.
 
 
 Fluxo simplificado das APIs
