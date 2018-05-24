@@ -8,7 +8,7 @@ Registro de Acompanhamento
 
 O método Realizar o Registro de Acompanhamentos de um Serviços permite que sejam registradas na base as informações de acompanhamento do serviço como as etapas e suas situações. Após a execução da última etapa da prestação, o método Concluir/Reabrir Acompanhamento deve ser utilizado, para sinalizar a conclusão da prestação.
 
-Realizar o Registro de Acompanhamentos de um Serviços 
+Realizar o Registro de Acompanhamentos de um Serviços
 
 .. note::
    Esse é um método **POST** para envio de acompanhamentos dos serviços sendo executados.
@@ -17,7 +17,7 @@ Parâmetros de Entrada
 ++++++++++++++++++++++
 
 .. code-block:: json
-   
+
    {
      "cpfCidadao": "08254631654",
      "dataEtapa": "10/10/2017",
@@ -39,7 +39,7 @@ dataSituacaoEtapa
    Data da etapa que o situação foi criado/alterado no formato "dd/mm/aaaa".
 
 etapa
-   Descrição da etapa que o serviço se encontra na dataEtapa.
+   Descrição da etapa que o serviço se encontra na dataEtapa. Sugere-se cadastra como etapa inicial do serviço o label 'Inicial' e quando o serviço for concluído enviar o registro com a etapa com o label 'Final'.
 
 orgao
    ID do órgão no `Portal de Serviços`_. Caso não saiba qual ID do órgão consulte pela `API do Portal de Serviços`_
@@ -61,16 +61,16 @@ Veja um exemplo de acesso utilizando o cURL_
 .. code-block:: console
 
     $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
-    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \ 
-    --header 'Accept: application/json' -d '{ \ 
-     "cpfCidadao": "08254631654", \ 
-     "dataEtapa": "10/10/2017", \ 
-     "dataSituacaoEtapa": "10/10/2017", \ 
-     "etapa": "Em Processamento.", \ 
-     "orgao": "36802", \ 
-     "protocolo": "0001AC.20171212", \ 
-     "servico": "47", \ 
-     "situacaoEtapa": "Alguma descrição da situação." \ 
+    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \
+    --header 'Accept: application/json' -d '{ \
+     "cpfCidadao": "08254631654", \
+     "dataEtapa": "10/10/2017", \
+     "dataSituacaoEtapa": "10/10/2017", \
+     "etapa": "Em Processamento.", \
+     "orgao": "36802", \
+     "protocolo": "0001AC.20171212", \
+     "servico": "47", \
+     "situacaoEtapa": "Alguma descrição da situação." \
      }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
 
 Parâmetros de Saída
@@ -78,7 +78,7 @@ Parâmetros de Saída
 
 .. code-block:: json
 
-    { 
+    {
       "message": "Operação realizada com sucessos!",
       "status": "OK"
     }
@@ -87,7 +87,7 @@ messagem
    Mensagem que descreve o status da operação.
 
 status
-   Status final da operação. Pode ser **OK** ou **ERROR** 
+   Status final da operação. Pode ser **OK** ou **ERROR**
 
 .. warning::
     Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
@@ -107,7 +107,7 @@ Parâmetros de Entrada
 ++++++++++++++++++++++
 
 .. code-block:: json
-   
+
    {
   "cpfCidadao": "08254631654",
   "orgao": "57842",
@@ -135,13 +135,13 @@ Veja um exemplo de acesso utilizando o cURL_
 .. code-block:: console
 
     $ curl -v -X PUT --header 'Content-Type: application/json;charset=UTF-8' -k \
-    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \ 
-    --header 'Accept: application/json' -d '{ \ 
-    "cpfCidadao": "08254631654", \ 
-    "orgao": "57842", \ 
-    "protocolo": "0001AC.20171212", \ 
-    "servico": "12014", \ 
-    "situacaoServico": "2" \ 
+    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \
+    --header 'Accept: application/json' -d '{ \
+    "cpfCidadao": "08254631654", \
+    "orgao": "57842", \
+    "protocolo": "0001AC.20171212", \
+    "servico": "12014", \
+    "situacaoServico": "2" \
     }' 'https://acompanhamento.servicos.gov.br/api/acompanhamento/situacao'
 
 Parâmetros de Saída
@@ -149,7 +149,7 @@ Parâmetros de Saída
 
 .. code-block:: json
 
-    { 
+    {
       "message": "Operação realizada com sucessos!",
       "status": "OK"
     }
@@ -158,7 +158,7 @@ messagem
    Mensagem que descreve o status da operação.
 
 status
-   Status final da operação. Pode ser **OK** ou **ERROR** 
+   Status final da operação. Pode ser **OK** ou **ERROR**
 
 .. warning::
     Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
