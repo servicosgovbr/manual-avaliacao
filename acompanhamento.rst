@@ -22,7 +22,7 @@ Parâmetros de Entrada
      "cpfCidadao": "08254631654",
      "dataEtapa": "10/10/2017",
      "dataSituacaoEtapa": "10/10/2017",
-     "etapa": "Em Processamento.",
+     "etapa": "Inicial",
      "orgao": "36802",
      "protocolo": "0001AC.20171212",
      "servico": "47",
@@ -39,7 +39,10 @@ dataSituacaoEtapa
    Data da etapa que o situação foi criado/alterado no formato "dd/mm/aaaa".
 
 etapa
-   Descrição da etapa que o serviço se encontra na dataEtapa. Sugere-se cadastra como etapa inicial do serviço o label 'Inicial' e quando o serviço for concluído enviar o registro com a etapa com o label 'Final'.
+   Descrição da etapa que o serviço se encontra na dataEtapa.
+
+.. note::
+   Sugere-se minimamente duas etapas: Etapa **Inicial** do serviço com o label 'Inicial' e Etapa **Final** quando o serviço for concluído com o label 'Final'.
 
 orgao
    ID do órgão no `Portal de Serviços`_. Caso não saiba qual ID do órgão consulte pela `API do Portal de Serviços`_
@@ -66,7 +69,7 @@ Veja um exemplo de acesso utilizando o cURL_
      "cpfCidadao": "08254631654", \
      "dataEtapa": "10/10/2017", \
      "dataSituacaoEtapa": "10/10/2017", \
-     "etapa": "Em Processamento.", \
+     "etapa": Final", \
      "orgao": "36802", \
      "protocolo": "0001AC.20171212", \
      "servico": "47", \

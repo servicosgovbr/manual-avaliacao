@@ -3,9 +3,9 @@
 
 A avaliação dos serviços prestados permitirá que o governo tenha uma visão da opinião do cidadão sobre os serviços disponíveis podendo assim melhora-los até que atendam, de fato, ao que a população espera.
 
-Duas formas estão disponíveis para o registro da opinião do cidadão. 
+Duas formas estão disponíveis para o registro da opinião do cidadão.
 
-Na primeira, um órgão de governo implementa o formulário de avaliação em seu próprio sistema e faz a chamada ao método Registrar Avaliação, o qual se encarregará em registrar o resultado da avaliação na base nacional de serviços e registrará a informação no e-OUV. 
+Na primeira, um órgão de governo implementa o formulário de avaliação em seu próprio sistema e faz a chamada ao método Registrar Avaliação, o qual se encarregará em registrar o resultado da avaliação na base nacional de serviços e registrará a informação no e-OUV.
 
 Na segunda, o órgão quer avaliar seu serviço, mas não quer desenvolver uma interface de avaliação, nesse caso ele deverá fazer a chamada ao método Obter Link do formulário de avaliação, que lhe fornecerá um endereço de um formulário que poderá ser embutido em seu sistema, usando um <iframe>, ou encaminhar o link recebido diretamente ao cidadão, seja por e-mail, seja por SMS.
 
@@ -17,18 +17,18 @@ Registrar Avaliação
 O método Registrar Avaliação permite que sejam registradas as informações da avaliação de um serviço prestado ao cidadão e o registro de uma manifestação junto ao e-OUV.
 
 .. note::
-   Para registrar uma avaliação é necessário ter cadastrado previamente o acompanhamento da prestação do serviço.
+   Para registrar uma avaliação é necessário ter cadastrado previamente o acompanhamento da prestação do serviço. Você deve solicitar o formulário de avaliação para a etapa 'Final'.
 
 
 Parâmetros de Entrada
 ++++++++++++++++++++++
 
 .. code-block:: json
-   
+
    {
     "avaliacao": {
     "cpfCidadao": "08254631654",
-    "etapa": "Análise Documental",
+    "etapa": "Final",
     "orgao": "57842",
     "protocolo": "0001AC.20171212",
     "servico": "12014"
@@ -95,13 +95,13 @@ Veja um exemplo de acesso utilizando o cURL_
 .. code-block:: console
 
     $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
-    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \ 
-    --header 'Accept: application/json' -d '{ \ 
-     "cpfCidadao": "08254631654", \ 
-     "etapa": "Em Processamento.", \ 
-     "orgao": "57842", \ 
-     "protocolo": "0001AC.20171212", \ 
-     "servico": "12014" \ 
+    --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \
+    --header 'Accept: application/json' -d '{ \
+     "cpfCidadao": "08254631654", \
+     "etapa": "Em Processamento.", \
+     "orgao": "57842", \
+     "protocolo": "0001AC.20171212", \
+     "servico": "12014" \
      }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/'
 
 
@@ -111,7 +111,7 @@ Parâmetros de Saída
 
 .. code-block:: json
 
-    { 
+    {
       "message": "Operação realizada com sucessos!",
       "status": "OK"
     }
@@ -120,7 +120,7 @@ messagem
    Mensagem que descreve o status da operação.
 
 status
-   Status final da operação. Pode ser **OK** ou **ERROR** 
+   Status final da operação. Pode ser **OK** ou **ERROR**
 
 .. warning::
     Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
@@ -140,7 +140,7 @@ Parâmetros de Entrada
 ++++++++++++++++++++++
 
 .. code-block:: json
-   
+
    {
   "cpfCidadao": "08254631654",
   "etapa": "Em Processamento.",
@@ -165,16 +165,16 @@ Veja um exemplo de acesso utilizando o cURL_
 .. code-block:: console
 
     $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
-    --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \ 
-    --header 'Accept: application/json' -d '{ \ 
-     "cpfCidadao": "08254631654", \ 
-     "dataEtapa": "10/10/2017", \ 
-     "dataSituacaoEtapa": "10/10/2017", \ 
-     "etapa": "Em Processamento.", \ 
-     "orgao": "57842", \ 
-     "protocolo": "0001AC.20171212", \ 
-     "servico": "12014", \ 
-     "situacaoEtapa": "Alguma descrição da situação." \ 
+    --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \
+    --header 'Accept: application/json' -d '{ \
+     "cpfCidadao": "08254631654", \
+     "dataEtapa": "10/10/2017", \
+     "dataSituacaoEtapa": "10/10/2017", \
+     "etapa": "Em Processamento.", \
+     "orgao": "57842", \
+     "protocolo": "0001AC.20171212", \
+     "servico": "12014", \
+     "situacaoEtapa": "Alguma descrição da situação." \
      }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
 
 
@@ -215,7 +215,7 @@ Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apac
                     .setParameter("servico", "47")
                     .setParameter("cpfCidadao", "08254631654")
                     .setParameter("protocolo", "0001AC.20171212")
-                    .setParameter("orgao", "36802") 
+                    .setParameter("orgao", "36802")
                     .setParameter("etapa", "Em Processamento.");
 
                 URI uri = builder.build();
@@ -236,7 +236,7 @@ Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apac
         }
     }
 
-.. attention:: 
+.. attention::
    **Não** está sendo considerado nesse exemplo questões como armazenar no código o login e senha de acesso as APIs. Por favor **utilize as melhores práticas de segurança** para armazenar e gerenciar as senhas.
 
 
@@ -245,7 +245,7 @@ Parâmetros de Saída
 
 .. code-block:: json
 
-    { 
+    {
       "message": "Operação realizada com sucessos!",
       "status": "OK"
     }
@@ -254,7 +254,7 @@ messagem
    Mensagem que descreve o status da operação.
 
 status
-   Status final da operação. Pode ser **OK** ou **ERROR** 
+   Status final da operação. Pode ser **OK** ou **ERROR**
 
 .. warning::
     Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
