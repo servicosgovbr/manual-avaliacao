@@ -11,6 +11,7 @@ Manual de uso da API de Avaliação e Acompanhamento
    :caption: Introdução
 
    apresentacao
+   passoapasso
    acessoasapis
 
 .. toctree::
@@ -26,4 +27,3 @@ Manual de uso da API de Avaliação e Acompanhamento
 
 * :ref:`genindex`
 * :ref:`glossario`
-
