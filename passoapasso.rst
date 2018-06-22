@@ -13,7 +13,7 @@ Solicite para o representante do órgão no Portal de Serviços que cadastre e m
 Acesse https://servicos.gov.br/editar para editar o serviço.
 
 .. note::
-   É necessário ter as credenciais no Portal de Serviços para poder editar um serviço.
+   É necessário ter as credenciais no Portal de Serviços para poder editar um serviço. Caso não possua `siga o procedimento para obter as credenciais`_.
 
 2. Descubra o código do órgão e o código dos seus serviços
 ----------------------------------------------------------
@@ -77,3 +77,4 @@ Acesse as consultas disponíveis na API de `Avaliação`_ para obter os dados e 
 .. _`Acompanhamento`: acompanhamento.html
 .. _`Avaliação`: avaliacao.html
 .. _`Apresentação`: apresentacao.html#fluxo-simplificado-para-o-cidadao
+.. _`siga o procedimento para obter as credenciais`: https://www.servicos.gov.br/pagina-tematica/outras-duvidas-editores
