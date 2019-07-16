@@ -62,7 +62,7 @@ O cidadão irá receber ou um email ou visualizar o formulário na própria pág
 Fluxo simplificado das APIs
 ****************************
 
-.. image:: _imagens/fluxo_simplificado.svg
+.. image:: _imagens/fluxo_simplificado.png
    :scale: 100 %
    :align: center
    :alt: Fluxo Simplificado do funcionamento das APIs.
