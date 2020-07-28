@@ -31,6 +31,11 @@ Parâmetros de Entrada
   "servico": "12014"
    }
 
+   
+canalAvaliacao (string)
+   Informar 1 para o formulário padrão do Módulo de Avaliação.
+canalPrestacao (string)
+   Canal em que o serviço foi prestado ao cidadão. Informar 8 - Pela WEB. 
 cpfCidadao (string)
    CPF do cidadão sem formatação.
 etapa (string)
