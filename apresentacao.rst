@@ -9,28 +9,16 @@ Entre as informações mínimas que deverão estar disponíveis no painel para c
 
 Este projeto foi criado para ajudar na coleta destas informações para a disponibilização delas no painel de monitoramento, e para ajudar aos órgãos e entidades da administração pública federal direta, autárquica e fundacional a atenderem disposto no decreto e com isso melhorarem a qualidade do serviço prestado ao cidadão.
 
-Formas de uso
+Como usar
 **************
 
-É possível usar de duas formas:
+Dentro do sistema para prestação do serviço, inclua um botão convidando o cidadão a avaliar o serviço recebido.
 
-* Enviar o link por email
-* Adicionar o formulário na página
+Faça a comunicação com o módulo de avaliação, informando da prestação do serviço e solicite um formulário de avaliação para o serviço recém prestado.
 
-O cidadão ao final da execução do serviço pode receber o link da sua avaliação da prestaçao do serviço conforme figura abaixo.
-
-.. figure:: _imagens/email.png
-   :scale: 100 %
-   :align: center
-   :alt: Exemplo de email recebido com link.
-
-   Exemplo de email recebido com link
-
-.. attention::
-    É **necessário que o próprio serviço** crie o texto e envie o email.
+Abra diretamente o formulário ou envie o link recebido por algum meio de contato que o órgão possua com o cidadão.
 
 
-Ou pode-se incluir na página do serviço o formulário já pronto e fornecido pela API de avaliação conforme imagem abaixo.
 
 .. figure:: _imagens/formulario.PNG
    :scale: 100 %
