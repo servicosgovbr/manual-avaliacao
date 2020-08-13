@@ -15,11 +15,18 @@ Atualmente, há dois ambientes para o uso das APIs de Avaliação e Acompanhamen
 
 
 As operações disponíveis estão descritas nos seguintes endereços abaixo:
+
+1. Testes
+____________________________________________________________________________
+Swagger Acompanhamento:
+- https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/swagger-ui.html
+Avaliação: 
+- https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/swagger-ui.html
+
+2. Produção
 ____________________________________________________________________________
 Swagger Acompanhamento:
 - https://acompanhamento.servicos.gov.br/api/acompanhamento/swagger-ui.html
-
-
 Avaliação: 
 - https://avaliacao.servicos.gov.br/api/avaliacao/swagger-ui.html
 
