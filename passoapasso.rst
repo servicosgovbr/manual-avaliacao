@@ -20,10 +20,23 @@ Acesse https://servicos.gov.br/editar para editar o serviço.
 A API de avaliação precisa do código do órgão e do serviço para poder ser utilizada.
 
 **Como fazer:**
-Acesse a API do Portal de Serviços para obter os códigos. https://servicos.gov.br/apis/v1/docs
+Acesse a API do Portal de Serviços para obter os códigos. 
+
+**a) Descubra o ID do seu órgão no SIORG:** https://siorg.planejamento.gov.br/siorg-cidadao-webapp/pages/listar_orgaos_estruturas/listar_orgaos_estruturas.jsf
+
+**b) Descubra o código dos serviços:**
+https://servicos.gov.br/api/v1/servicos/orgao/"substitua código do órgão no SIORG"
+
+Exemplo: https://servicos.gov.br/api/v1/servicos/orgao/235874
+
+**c) Descubra o código do órgão para a API:**
+https://servicos.gov.br/api/v1/orgao/"substitua código do órgão no SIORG" 
+
+Exemplo: https://servicos.gov.br/api/v1/orgao/235874
 
 .. important::
    Esse código é específico para cada órgão e cada serviço. Não utilize códigos de outros órgãos e serviços.
+   Para ambiente de teste, substitua "servicos.gov.br" por "servicos.treina.nuvem.gov.br"
 
 3. Obtenha as credenciais para usar as APIs de avaliação
 --------------------------------------------------------
