@@ -43,7 +43,7 @@ Exemplo: https://servicos.gov.br/api/v1/orgao/235874
 
 **Como fazer:**
 Os métodos das APIs necessitam autenticação para uso.
-A solicitação das credenciais de acesso para uso das APIs deve ser enviada para apis@serviços.gov.br, contendo as informações: órgão, serviço, nome da aplicação, telefone do responsável, email a ser utilizado como usuário das APIs.
+A solicitação das credenciais de acesso para uso das APIs deve ser enviada para apis@servicos.gov.br, contendo as informações: órgão, serviço, nome da aplicação, telefone do responsável, email a ser utilizado como usuário das APIs.
 
 .. caution::
    Essa credencial não é a mesma para edição dos serviços no Portal de Servicos.
