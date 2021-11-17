@@ -5,55 +5,42 @@ O decreto 8936/2016, instituiu a Plataforma de Cidadania Digital e dispôs sobre
 
 No seu artigo 3º, incisos IV e V foi instituído a ferramenta de avaliação da satisfação dos usuários em relação aos serviços públicos prestados e o painel de monitoramento do desempenho dos serviços públicos prestados.
 
-Entre as informações mínimas que deverão estar disponíveis no painel para cada serviço, órgão ou entidade da administração pública federal, estão o volume de solicitações, tempo médio de atendimento e o grau de satisfação dos usuários.
+Entre as informações mínimas que deverão estar disponíveis no painel para cada serviço, órgão ou entidade da administração pública federal, estão o volume de solicitações, tempo médio de atendimento e o nível de satisfação dos usuários.
 
-Este projeto foi criado para ajudar na coleta destas informações para a disponibilização delas no painel de monitoramento, e para ajudar aos órgãos e entidades da administração pública federal direta, autárquica e fundacional a atenderem disposto no decreto e com isso melhorarem a qualidade do serviço prestado ao cidadão.
-
-Como usar
-**************
-
-Dentro do sistema para prestação do serviço, inclua um botão convidando o cidadão a avaliar o serviço recebido.
-
-Faça a comunicação com o módulo de avaliação, informando da prestação do serviço e solicite um formulário de avaliação para o serviço recém prestado.
-
-Abra diretamente o formulário ou envie o link recebido por algum meio de contato que o órgão possua com o cidadão.
-
-
-
-.. figure:: _imagens/formulario.PNG
-   :scale: 100 %
-   :alt: Formulário de Avaliação de Serviços
-   :align: center
-
-   Formulário de Avaliação de Serviços
 
 Fluxo simplificado para o cidadão
 *********************************
 
-O cidadão irá receber ou um email ou visualizar o formulário na própria página do serviço. A sugestão é a do envio do email para que o cidadão possa responder quando desejar.
+O formulário de avaliação deverá ser exibido na própria página do serviço para melhor experiência do cidadão.
 
 .. figure:: _imagens/fluxo_cidadao.png
    :scale: 100 %
    :align: center
    :alt: Primeira parte do fluxo para o cidadão.
 
-   Cidadão recebe a solicitação de avaliação ao final do serviço prestado.
+   Ao final da prestação do serviço o cidadão recebe o formulário de avaliação
 
 .. figure:: _imagens/fluxo_cidadao2.png
     :scale: 100 %
     :align: center
     :alt: Cidadão responde a avaliação.
 
-    Cidadão responde a avaliação.
+    Cidadão responde a avaliação
 
 
 Fluxo simplificado das APIs
 ****************************
 
-.. image:: _imagens/fluxo_simplificado.png
+.. figure:: _imagens/novo_fluxo.png
    :scale: 100 %
    :align: center
    :alt: Fluxo Simplificado do funcionamento das APIs.
 
-.. important::
-   Para que seja chamado a API de **Avaliação** é necessário o envio prévio de um **Acompanhamento**. Não há possibilidade de uma avaliação sem um acompanhamento associado.
+   Fluxo da API de avaliação
+
+.. attention::
+   - É obrigatório o registro de pelo menos uma etapa de acompanhamento para gerar uma avaliação. 
+
+   - Cada etapa de acompanhamento poderá ser avaliada (esse procedimento é opcional).
+
+   - Fica a critério do órgão a forma de exibição do formulário de avaliação para o cidadão. Poderá ser um modal dentro da própria página do serviço/sistema (recomendado), pop-up ou email para o cidadão com o link de acesso ao formulário.
