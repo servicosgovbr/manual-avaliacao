@@ -95,7 +95,7 @@ status
 .. warning::
     Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
 
-﻿Concluir/reabrir uma prestação de serviço
+Concluir/reabrir uma prestação de serviço
 -----------------------------------------
 
 Após o registro das etapas na base de avaliação e tendo sido encerrado a prestação do serviço, deve-se informar a conclusão utilizando o método Realizar a conclusão ou reabertura de uma prestação de serviço, disponível no endpoint https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situcacao
