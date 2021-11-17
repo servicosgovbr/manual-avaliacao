@@ -1,78 +1,90 @@
 Passo a passo para avaliar um serviço
 *************************************
 
-1. Obtenha as credenciais para usar as APIs de avaliação
---------------------------------------------------------
-Os métodos das APIs de avaliação necessitam de autenticação para uso (usuário e senha).
+Para avaliar com sucesso uma execução de um serviço pelo o cidadão é necessário executar alguns passos:
 
-Para solicitar sua credencial, basta enviar um email para apis@servicos.gov.br contendo as seguintes informações: órgão, serviço, nome da aplicação que utlizará a avaliação, telefone do responsável e email para ser utilizado como usuário das APIs.
+
+1. Cadastre seu serviço no Portal de Serviços:
+----------------------------------------------
+Um requisito para avaliação é ter o serviço público cadastrado no portal de serviços.
+
+**Como fazer:**
+Solicite para o representante do órgão no Portal de Serviços que cadastre e mantenha atualizado o seu serviço.
+Acesse https://servicos.gov.br/editar para editar o serviço.
+
+.. note::
+   É necessário ter as credenciais no Portal de Serviços para poder editar um serviço. Caso não possua `siga o procedimento para obter as credenciais`_.
 
 2. Descubra o código do órgão e o código dos seus serviços
 ----------------------------------------------------------
-Para a correta utilização da API de Avaliação é preciso obter os códigos válidos do órgão e dos serviços na API de Serviços. 
-
-Siga os seguintes passos:
-
-**1- Descubra o ID do seu órgão no SIORG** https://siorg.planejamento.gov.br/siorg-cidadao-webapp/pages/listar_orgaos_estruturas/listar_orgaos_estruturas.jsf
-
-.. figure:: _imagens/cod_siorg.png
-   :scale: 100 %
-   :align: center
-   :alt: Código Siorg
-
-   O código SIORG está destacado em amarelo
-
-**2- Com o código SIORG obtido, descubra o código do órgão para ser utilizado na API de Avaliação.** Para isso, utilize o endereço https://servicos.gov.br/api/v1/orgao/ inserindo o código SIORG no final da URL.
-
-Exemplo: https://servicos.gov.br/api/v1/orgao/235876
-
-.. figure:: _imagens/cod_orgao.png
-   :scale: 100 %
-   :align: center
-   :alt: Código do órgão
-
-   O código do órgão está destacado na imagem acima. É esse código que deverá ser utilizado nas chamadas aos métodos da API de Avaliação. 
-
-
-**3- Por último, descubra o código do seu serviço.** Utilize a URL https://servicos.gov.br/api/v1/servicos/orgao/ inserindo o código SIORG no final.
-
-Exemplo: https://servicos.gov.br/api/v1/servicos/orgao/235876
-
-.. figure:: _imagens/cod_servico.png
-   :scale: 100 %
-   :align: center
-   :alt: Código do serviço
-
-   O código do serviço está destacado na imagem acima. É esse código que será usado nas chamadas aos métodos da API de avaliação
-
-.. important::
-   Essa chamada retorna todos os serviços cadastrados para órgão. Caso seu serviço não esteja listado, procure o representante do seu órgão responsável pelo cadastro de serviços no Portal Gov.br.
-
-.. attention::
-   O código do SIORG **não deverá ser utilizado** nas chamadas aos métodos da API de Avaliação.
-
-.. important::
-   Todos os passos desse tópico estão relacionados ao ambiente da API de Serviços de produção. Para ambiente de teste substitua **servicos.gov.br** por **servicos.treina.nuvem.gov.br**.
-
-3. Envie o(s) acompanhamento(s) durante a execução do serviço
--------------------------------------------------------------
-
-É obrigatório o registro de pelo menos uma etapa de acompanhamento para gerar uma avaliação. Cada etapa de acompanhamento poderá ser avaliada (esse procedimento é opcional).
+A API de avaliação precisa do código do órgão e do serviço para poder ser utilizada.
 
 **Como fazer:**
-Para **Registrar Acompanhamentos** utilize o endpoint específico para isso. Acesse o manual em `Acompanhamento`_ para maiores informações.
+Acesse a API do Portal de Serviços para obter os códigos. 
 
-4. Obter Link do formulário para avaliação
---------------------------------------------------------------
-Fica a critério do órgão a forma de exibição do formulário de avaliação para o cidadão. Poderá ser um modal dentro da própria página do serviço/sistema (recomendado), pop-up ou email para o cidadão com o link de acesso ao formulário.
- 
+**a) Descubra o ID do seu órgão no SIORG:** https://siorg.planejamento.gov.br/siorg-cidadao-webapp/pages/listar_orgaos_estruturas/listar_orgaos_estruturas.jsf
+
+**b) Descubra o código dos serviços:**
+https://servicos.gov.br/api/v1/servicos/orgao/"substitua código do órgão no SIORG"
+
+Exemplo: https://servicos.gov.br/api/v1/servicos/orgao/235874
+
+**c) Descubra o código do órgão para a API:**
+https://servicos.gov.br/api/v1/orgao/"substitua código do órgão no SIORG" 
+
+Exemplo: https://servicos.gov.br/api/v1/orgao/235874
+
+.. important::
+   Esse código é específico para cada órgão e cada serviço. Não utilize códigos de outros órgãos e serviços.
+   Para ambiente de teste, substitua "servicos.gov.br" por "servicos.treina.nuvem.gov.br"
+
+3. Obtenha as credenciais para usar as APIs de avaliação
+--------------------------------------------------------
+
 **Como fazer:**
-Para **Obter Link do formulário de avaliação**, utilize o endpoint de avaliação.  Acesse o manual em `Avaliação`_ para maiores informações.
+Os métodos das APIs necessitam autenticação para uso.
+A solicitação das credenciais de acesso para uso das APIs deve ser enviada para apis@servicos.gov.br, contendo as informações: órgão, serviço, nome da aplicação, telefone do responsável, email a ser utilizado como usuário das APIs.
 
-5. O cidadão preenche a avaliação
+.. caution::
+   Essa credencial não é a mesma para edição dos serviços no Portal de Servicos.
+
+
+4. Envie os acompanhamentos durante a execução do serviço
+---------------------------------------------------------
+
+Para a avaliação final da execução do serviço é necessário ter um acompanhamento prévio.
+
+**Como fazer:**
+Utilize o endpoint de acompanhamento. Acesse o manual em `Acompanhamento`_ para verificar como utilizar o endpoint.
+
+5. Envie o pedido de geração de link ou formulário para avaliação ao final da execução do serviço
+--------------------------------------------------------------------------------------------------
+
+**Como fazer:**
+Utilize o endpoint de avaliação.  Acesse o manual em `Avaliação`_ para verificar como utilizar o endpoint.
+
+6. Envie o link ou o formulário para o cidadão
+----------------------------------------------
+
+**Como fazer:**
+Pode-se usar qualquer meio de contato com o cidadão que deseje. O meio sugerido é enviar por email.
+Verifique a `Apresentação`_ para outras sugestões.
+
+7. O cidadão preenche a avaliação
 ---------------------------------
 
-O cidadão preenche o formulário de avaliação relacionado ao serviço prestado.
+O cidadão irá preencher o formulário de avaliação relacionado ao serviço prestado.
+
+8. Acompanhe as avaliações do cidadão
+-------------------------------------
+
+Caso o orgão tenha interesse é possível acessar os dados da avaliação dos cidadãos.
+Acesse as consultas disponíveis na API de `Avaliação`_ para obter os dados e poder analisá-los em seu õrgão.
+
+.. important::
+   Uma avaliação pode gerar uma manifestação na ouvidoria caso o cidadão tenha optado.
+   O órgão pode ter que tratar uma avaliação via ouvidoria.
+
 
 
 .. _`Acompanhamento`: acompanhamento.html
