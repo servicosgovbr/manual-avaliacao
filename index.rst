@@ -21,6 +21,11 @@ Manual de uso da API de Avaliação e Acompanhamento
    acompanhamento
    avaliacao
 
+.. toctree::
+   :maxdepth: 2
+   :caption: FAQ - Perguntas frequentes
+
+   faq
 
 Índices
 ========

@@ -1,19 +1,15 @@
 ﻿Avaliação
 **********
 
-A avaliação dos serviços prestados permitirá que o governo tenha uma visão da opinião do cidadão sobre os serviços disponíveis podendo assim melhora-los até que atendam, de fato, ao que a população espera.
+O registro da avaliação deve ser utilizada para geração do link de avaliação da prestação do serviço.
 
-
-O órgão quer avaliar seu serviço, deve, após cadastrar o acompanhamento da prestação do serviço, fazer a chamada ao método Obter Link do formulário de avaliação, o qual lhe fornecerá um endereço de um formulário que poderá ser embutido em seu sistema apresentando um botão "Avaliar" no seu sistema, ou encaminhar o link recebido diretamente ao cidadão, seja por e-mail, seja por SMS.
-
-
-Formulário de Avaliação
+Obter Link do formulário de avaliação
 ---------------------
 
-O método Obter Link do formulário de avaliação disponibiliza um link para que o cidadão possa avaliar um serviço recebido pelo governo e registra na base as informações da avaliação de um serviço e se for o caso, faz o registro de uma manifestação junto ao e-OUV.
+O método **Obter Link do formulário de avaliação** retorna um link para que o cidadão possa avaliar o serviço, registra na base as informações da avaliação e, se for o caso, faz o registro de uma manifestação junto à Ouvidoria.
 
-.. note::
-   Para obter um formulário de avaliação de serviço é necessário ter cadastrado previamente o acompanhamento da prestação do serviço.
+.. attention::
+   É obrigatório o registro de pelo menos uma etapa de acompanhamento para gerar um link do formulário de avaliação.
 
 
 Parâmetros de Entrada
@@ -32,11 +28,11 @@ Parâmetros de Entrada
    }
 
    
-canalAvaliacao (string)
-   Informar 1 para o formulário padrão do Módulo de Avaliação.
-canalPrestacao (string)
-   Canal em que o serviço foi prestado ao cidadão. Informar 8 - Pela WEB. 
-cpfCidadao (string)
+canalAvaliacao (string, optional)
+    [1 - Formulário da plataforma, 2 - Formulário próprio, 3 - SMS, 4 - Pesquisa presencial e 5 - Whatsapp].
+canalPrestacao (string,optional)
+    [1 - Aplicativo Móvel, 2 - E-mail, 3 - Fax, 4 - Postal, 5 - Presencial, 6 - SMS, 7 - Telefone e 8 - Web].
+cpfCidadao (string,optional)
    CPF do cidadão sem formatação.
 etapa (string)
    Descrição da etapa do serviço.
@@ -45,7 +41,7 @@ orgao (string)
 protocolo (string)
    Protocolo para identificar o serviço. (O mesmo informado no registro de Acompanhamento!)
 servico (string)
-   Identificador do serviço do órgão.
+   Identificador do serviço.
 
 Veja um exemplo de acesso utilizando o cURL_
 
@@ -67,69 +63,63 @@ Veja um exemplo de acesso utilizando o cURL_
      }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
 
 
-Veja um exemplo mínimo de acesso na linguagem Java utilizando o HTTPClient Apache.
+Veja um exemplo de acesso utilizando Java
 
 .. code-block:: java
 
-    import org.apache.http.Header;
-    import org.apache.http.HeaderElement;
-    import org.apache.http.auth.AuthScope;
-    import org.apache.http.client.utils.URIBuilder;
-    import org.apache.http.auth.UsernamePasswordCredentials;
-    import org.apache.http.client.CredentialsProvider;
-    import org.apache.http.client.methods.CloseableHttpResponse;
+    import org.apache.http.HttpHeaders;
+    import org.apache.http.HttpResponse;
     import org.apache.http.client.methods.HttpPost;
-    import org.apache.http.impl.client.BasicCredentialsProvider;
+    import org.apache.http.entity.ContentType;
+    import org.apache.http.entity.StringEntity;
     import org.apache.http.impl.client.CloseableHttpClient;
     import org.apache.http.impl.client.HttpClients;
-    import org.apache.http.util.EntityUtils;
-    import java.util.List;
-    import java.util.Arrays;
-    import java.net.URI;
 
-    public class BuscaAvaliacao {
+    import java.io.BufferedReader;
+    import java.io.IOException;
+    import java.io.InputStreamReader;
 
-        public static void main(String[] args) throws Exception {
-            CredentialsProvider credsProvider = new BasicCredentialsProvider();
-            credsProvider.setCredentials(
-                    AuthScope.ANY,
-                    new UsernamePasswordCredentials("aladin@disney.com", "opensesame"));
-            CloseableHttpClient httpclient = HttpClients.custom()
-                    .setDefaultCredentialsProvider(credsProvider)
-                    .build();
+    public class Avaliacao {
+
+        private final CloseableHttpClient httpClient = HttpClients.createDefault();
+
+        public static void main(String[] args) throws Exception{
+            Avaliacao avaliacao = new Avaliacao();
             try {
-                URIBuilder builder = new URIBuilder();
-                builder.setScheme("https").setHost("avaliacao.servicos.gov.br")
-                    .setPath("/api/avaliacao/formulario")
-					.setParameter("canalAvaliacao", "1")
-                    .setParameter("canalPrestacao", "8")
-                    .setParameter("servico", "47")
-                    .setParameter("cpfCidadao", "08254631654")
-                    .setParameter("protocolo", "0001AC.20171212")
-                    .setParameter("orgao", "36802")
-                    .setParameter("etapa", "Em Processamento.");
-
-                URI uri = builder.build();
-                HttpPost httpPost = new HttpPost(uri);
-                System.out.println("----------------------------------------");
-                System.out.println("Executando request " + httppost.getRequestLine());
-                CloseableHttpResponse response = httpclient.execute(httppost);
-                try {
-                    System.out.println("----------------------------------------");
-                    System.out.println(response.getStatusLine());
-                    System.out.println(EntityUtils.toString(response.getEntity()));
-                } finally {
-                    response.close();
-                }
+                avaliacao.obterLink();
             } finally {
-                httpclient.close();
+                avaliacao.close();
             }
         }
+
+        private void close() throws IOException {
+            httpClient.close();
+        }
+
+        private void obterLink() throws Exception{
+            String url = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/formulario?completo=false";
+            String payload = "{" +
+                    "\"canalAvaliacao\": \"4\", " +
+                    "\"canalPrestacao\": \"4\", " +
+                    "\"cpfCidadao\": \"99999999999\", " +
+                    "\"etapa\": \"Em Processamento.\", " +
+                    "\"orgao\": \"36802\", " +
+                    "\"protocolo\": \"1234567\", " +
+                    "\"servico\": \"47\"" +
+                    "}";
+            HttpPost request = new HttpPost(url);
+            request.addHeader(HttpHeaders.AUTHORIZATION, "Basic " + "ZmFiaW8uZmVybmFuZGVzQGV");
+            request.addHeader("Content-Type", "application/json;charset=UTF-8");
+            request.addHeader("Accept", "application/json");
+            StringEntity entity = new StringEntity(payload, ContentType.APPLICATION_JSON);
+            request.setEntity(entity);
+            HttpResponse response = httpClient.execute(request);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "utf-8"), 8);
+            String line = null;
+            while ((line = reader.readLine()) != null) // Read line by line
+                System.out.print(line);
+        }
     }
-
-.. attention::
-   **Não** está sendo considerado nesse exemplo questões como armazenar no código o login e senha de acesso as APIs. Por favor **utilize as melhores práticas de segurança** para armazenar e gerenciar as senhas.
-
 
 Parâmetros de Saída
 ++++++++++++++++++++++
@@ -137,25 +127,12 @@ Parâmetros de Saída
 .. code-block:: json
 
     {
-      "message": "Operação realizada com sucessos!",
-      "status": "OK"
+    "location": "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/#/avaliacao/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ7XCJzZXJ2aWNvXCI6XCI0N1wiLFwiY3BmQ2lkYWRhb1wiOlwiOTYyMjA2MjcxNzJcIixcInByb3RvY29sb1wiOlwiMDAwMUNBLjIwMTcxMjEyXCIsXCJvcmdhb1wiOlwiMzY4MDJcIixcImV0YXBhXCI6XCJFbSBQcm9jZXNzYW1lbnRvLlwiLFwiaWRcIjoyNTk4OTcsXCJjcml0ZXJpb3NcIjpbe1wiY29kaWdvXCI6MTAsXCJjb2RpZ29QZXJndW50YVwiOjl9LHtcImNvZGlnb1wiOjEsXCJjb2RpZ29QZXJndW50YVwiOjF9LHtcImNvZGlnb1wiOjksXCJjb2RpZ29QZXJndW50YVwiOjh9LHtcImNvZGlnb1wiOjIsXCJjb2RpZ29QZXJndW50YVwiOjN9LHtcImNvZGlnb1wiOjcsXCJjb2RpZ29QZXJndW50YVwiOjR9LHtcImNvZGlnb1wiOjgsXCJjb2RpZ29QZXJndW50YVwiOjZ9XSxcImF2YWxpYWNhb0NvbXBsZXRhXCI6ZmFsc2V9IiwiaXNzIjoiQVBJIFNlcnZpw6dvcyBEaWdpdGFpcyAtIEF2YWxpYcOnw6NvIiwiaWF0IjoxNjM1MTg0NTg4fQ.gr5QC_zl1dFqPIdK1o2fnO1sfUIcrpVeK4N2pVMTNi-agvxQSR3m-ez9YYZ0xZK7fRO6b6QCRiqmvNjcCcgAxg"
     }
 
-messagem
-   Mensagem que descreve o status da operação.
-
-status
-   Status final da operação. Pode ser **OK** ou **ERROR**
+location (string)
+   URL de acesso ao formulário de avaliação.
 
 .. warning::
-    Há outras saídas possíveis dependendo se foi feito com sucesso o login ou mesmo se o serviço já existe no `Portal de Serviços`_. Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
+    Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
 
-
-O link da avaliação levará o cidadão para um formuláro de avaliação como o exibido abaixo:
-
-.. image:: _imagens/formulario.PNG
-   :scale: 100 %
-   :alt: Formulário de Avaliação de Serviços
-   :align: center
-
-.. _`Portal de Serviços`: http://servicos.gov.br
