@@ -1,41 +1,49 @@
 ﻿Acesso as APIs de Acompanhamento e Avaliação de Serviços
 ********************************************************
 
-Atualmente, há dois ambientes para o uso das APIs de Avaliação e Acompanhamento de Serviços Públicos:
+Há dois ambientes para o uso da API de Avaliação de Serviços Públicos:
 
-1. Testes e homologação:
+Testes e homologação
 ----------------------------
-- Acompanhamento: https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/
-- Avaliação:   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/
-
-2. Produção:
-----------------------------
-- Acompanhamento: https://acompanhamento.servicos.gov.br/api/acompanhamento/
-- Avaliação:   https://avaliacao.servicos.gov.br/api/avaliacao/
-
-
-As operações disponíveis estão descritas nos seguintes endereços abaixo:
-
-Testes
-____________________________________________________________________________
-- Swagger Acompanhamento:   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/swagger-ui.html
-
-- Avaliação:   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/swagger-ui.html
+- **Acompanhamento:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/
+- **Avaliação:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/
 
 Produção
-____________________________________________________________________________
-- Swagger Acompanhamento:   https://acompanhamento.servicos.gov.br/api/acompanhamento/swagger-ui.html
+----------------------------
+- **Acompanhamento:** https://acompanhamento.servicos.gov.br/api/acompanhamento/
+- **Avaliação:** https://avaliacao.servicos.gov.br/api/avaliacao/
 
-- Avaliação:   https://avaliacao.servicos.gov.br/api/avaliacao/swagger-ui.html
+Ambiente web para desenvolvedores
+---------------------------------
 
-.. important::
-   Os métodos das APIs necessitam autenticação para uso. A solicitação das credenciais de acesso para uso das APIs deve ser enviada para apis@serviços.gov.br, contendo as informações: órgão, serviço, nome da aplicação, telefone do responsável, email a ser utilizado como usuário das APIs.
+Caso necessite é disponibilizado um Swagger para teste de chamadas aos métodos da API:
+
+Swagger de testes
+___________________________
+- **Acompanhamento:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/swagger-ui.html
+
+- **Avaliação:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/swagger-ui.html
+
+Swagger de produção
+___________________________
+- **Acompanhamento:**   https://acompanhamento.servicos.gov.br/api/acompanhamento/swagger-ui.html
+
+- **Avaliação:**   https://avaliacao.servicos.gov.br/api/avaliacao/swagger-ui.html
 
 Deve-se usar o cabeçalho http **Authorization: Basic** em Base64 para passar as credenciais de autenticação nas chamadas das APIs. 
 
-Caso deseje você pode utilizar a página https://www.base64decode.org/ para decodificar e codificar o login e senha em Base64.
- 
-.. code-block:: http
+.. note::
    
-   Exemplo de login:senha `aladdin:opensesame` 
-   Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+   Lembre-se de informar usuário e senha no formato (login:senha) em Base64 para utilizar os métodos.
+   
+   Exemplo prático:
+
+   Nosso usuário é **aladdin** e a senha é **opensesame**. Então temos o formato **aladdin:opensesame**
+
+   Codificamos essa string (aladdin:opensesame) em Basic64 e obtemos o senguinte código: **YWxhZGRpbjpvcGVuc2VzYW1l**
+
+   Agora é só colocar essa informação no header das nossas chamadas aos métodos da API de avaliação
+
+   Reultado final fica: **Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l**
+
+Você pode utilizar a página https://www.base64encode.org/ para codificar a string do login e senha em Base64.
