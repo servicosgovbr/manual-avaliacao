@@ -25,7 +25,7 @@ O formulário de avaliação deverá ser exibido na própria página do serviço
     :align: center
     :alt: Cidadão responde a avaliação.
 
-    Cidadão responde a avaliação
+    Após a avaliação, o cidadão poderá registrar elogio ou reclamação
 
 
 Fluxo simplificado das APIs
