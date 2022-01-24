@@ -62,6 +62,7 @@ Veja um exemplo de acesso utilizando o cURL_
 
     $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
     --header 'Authorization: Basic YWxhZGluQGRpc25leS5jb206b3BlbnNlc2FtZQ==' \
+    --header 'Accept-Language: pt-br' \
     --header 'Accept: application/json' -d '{ \
      "cpfCidadao": "08254631654", \
      "dataEtapa": "10/10/2017", \
@@ -122,6 +123,7 @@ Veja um exemplo de acesso utilizando Java
             HttpPost request = new HttpPost(url);
             request.addHeader(HttpHeaders.AUTHORIZATION, "Basic " + "ZmFiaW8uZmVybmFuZGV");
             request.addHeader("Content-Type", "application/json;charset=UTF-8");
+            request.addHeader("Accept-Language", "pt-br");
             request.addHeader("Accept", "application/json");
             StringEntity entity = new StringEntity(payload, ContentType.APPLICATION_JSON);
             request.setEntity(entity);
