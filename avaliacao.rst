@@ -47,20 +47,20 @@ Exemplo de acesso utilizando o cURL_
 
 .. code-block:: console
 
-	curl --location --request POST 'https://avaliacao.servicos.gov.br/api/avaliacao/formulario' \
-	--header 'Content-Type: application/json;charset=UTF-8' \
-	--header 'Accept: application/json' \
-	--header 'Accept-Language: pt-br' \
-	--header 'Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l' \
-	--data-raw '{
-	  "canalAvaliacao": "4",
-	  "canalPrestacao": "4",
-	  "cpfCidadao": "99999999999",
-	  "etapa": "Em Processamento.",
-	  "orgao": "00000",
-	  "protocolo": "0001KK.20171212",
-	  "servico": "00"
-	}'
+    curl --location --request POST 'https://avaliacao.servicos.gov.br/api/avaliacao/formulario' \
+    --header 'Content-Type: application/json;charset=UTF-8' \
+    --header 'Accept: application/json' \
+    --header 'Accept-Language: pt-br' \
+    --header 'Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l' \
+    --data-raw '{
+	"canalAvaliacao": "4",
+	"canalPrestacao": "4",
+	"cpfCidadao": "99999999999",
+	"etapa": "Em Processamento.",
+	"orgao": "00000",
+	"protocolo": "0001KK.20171212",
+	"servico": "00"
+    }'
 
 
 Exemplo de acesso utilizando Java
@@ -137,3 +137,5 @@ location (string)
 .. warning::
     Para uma listagem completa da saída por favor `verifique a documentação Swagger`_.
 
+.. _cURl: https://curl.haxx.se/
+.. _`verifique a documentação Swagger`: https://avaliacao.servicos.gov.br/api/avaliacao/swagger-ui.html
