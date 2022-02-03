@@ -43,28 +43,27 @@ protocolo (string)
 servico (string)
    Identificador do serviço.
 
-Veja um exemplo de acesso utilizando o cURL_
+Exemplo de acesso utilizando o cURL_
 
 .. code-block:: console
 
-    $ curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' -k \
-    --header 'Authorization: Basic YXBpQG1wLmdvdi5icjoxMjM0NTY3OA==' \
-    --header 'Accept-Language: pt-br' \
-    --header 'Accept: application/json' -d '{ \
-     "canalAvaliacao": "1", \
-     "canalPrestacao": "8", \     
-	 "cpfCidadao": "08254631654", \
-     "dataEtapa": "10/10/2017", \
-     "dataSituacaoEtapa": "10/10/2017", \
-     "etapa": "Em Processamento.", \
-     "orgao": "57842", \
-     "protocolo": "0001AC.20171212", \
-     "servico": "12014", \
-     "situacaoEtapa": "Alguma descrição da situação." \
-     }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
+	curl --location --request POST 'https://avaliacao.servicos.gov.br/api/avaliacao/formulario' \
+	--header 'Content-Type: application/json;charset=UTF-8' \
+	--header 'Accept: application/json' \
+	--header 'Accept-Language: pt-br' \
+	--header 'Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l' \
+	--data-raw '{
+	  "canalAvaliacao": "4",
+	  "canalPrestacao": "4",
+	  "cpfCidadao": "99999999999",
+	  "etapa": "Em Processamento.",
+	  "orgao": "00000",
+	  "protocolo": "0001KK.20171212",
+	  "servico": "00"
+	}'
 
 
-Veja um exemplo de acesso utilizando Java
+Exemplo de acesso utilizando Java
 
 .. code-block:: java
 
@@ -98,7 +97,7 @@ Veja um exemplo de acesso utilizando Java
         }
 
         private void obterLink() throws Exception{
-            String url = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/formulario?completo=false";
+            String url = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/formulario";
             String payload = "{" +
                     "\"canalAvaliacao\": \"4\", " +
                     "\"canalPrestacao\": \"4\", " +
