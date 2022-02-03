@@ -11,6 +11,19 @@ O método **Obter Link do formulário de avaliação** retorna um link para que 
 .. attention::
    É obrigatório o registro de pelo menos uma etapa de acompanhamento para gerar um link do formulário de avaliação.
 
+Endpoint de homologação 
+++++++++++++++++++++++
+
+.. code-block:: html
+
+   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/formulario
+
+Endpoint de produção 
+++++++++++++++++++++++
+
+.. code-block:: html
+
+   https://avaliacao.servicos.gov.br/api/avaliacao/formulario
 
 Parâmetros de Entrada
 ++++++++++++++++++++++
