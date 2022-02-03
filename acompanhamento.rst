@@ -13,6 +13,20 @@ Para mais informações, `verifique a documentação Swagger`_.
 .. attention::
    Vale lembrar que a geração do **formulário de avaliação** está condicionada ao registro de **pelo menos um** acompanhamento.
 
+Endpoint de homologação 
+++++++++++++++++++++++
+
+.. code-block:: html
+
+   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/
+
+Endpoint de produção 
+++++++++++++++++++++++
+
+.. code-block:: html
+
+   https://acompanhamento.servicos.gov.br/api/acompanhamento/
+   
 Parâmetros de Entrada
 ++++++++++++++++++++++
 
@@ -163,6 +177,19 @@ Após os registros dos acompanhamentos e encerrada a prestação do serviço, po
 
 Para mais informações, `verifique a documentação Swagger`_.
 
+Endpoint de homologação 
+++++++++++++++++++++++
+
+.. code-block:: html
+
+   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situacao
+
+Endpoint de produção 
+++++++++++++++++++++++
+
+.. code-block:: html
+
+   https://acompanhamento.servicos.gov.br/api/acompanhamento/situacao
 
 Parâmetros de Entrada
 ++++++++++++++++++++++
