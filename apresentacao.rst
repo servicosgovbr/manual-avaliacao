@@ -41,6 +41,6 @@ Fluxo simplificado das APIs
 .. attention::
    - É obrigatório o registro de pelo menos uma etapa de acompanhamento para gerar uma avaliação. 
 
-   - Cada etapa de acompanhamento poderá ser avaliada (esse procedimento é opcional).
+   - Cada etapa de acompanhamento poderá ser avaliada.
 
    - Fica a critério do órgão a forma de exibição do formulário de avaliação para o cidadão. Poderá ser um modal dentro da própria página do serviço/sistema (recomendado), pop-up ou email para o cidadão com o link de acesso ao formulário.
