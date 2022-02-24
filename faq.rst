@@ -8,6 +8,11 @@ O CPF do cidadão é obrigatório?
 
 O CPF não é obrigatório. A API foi projetada para receber avaliações anônimas e não exige a passagem desse parâmetro.
 
+Não acho meu serviço na lista de serviços para meu órgão. O que devo fazer?
+-------------------------------
+
+Procure o ponto focal no órgão pela digitalização de serviços. Essa pessoa terá acesso irrestrito a edição de serviços no órgão (tanto para o ambiente de produção quanto para homologação). 
+
 Os códigos dos órgãos e serviços são os mesmos em teste/homologação e em produção?
 ----------------------------------------------------------------------------------
 
