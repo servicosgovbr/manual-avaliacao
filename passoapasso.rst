@@ -45,8 +45,7 @@ Exemplo: https://servicos.gov.br/api/v1/servicos/orgao/235876
 
    O código do serviço está destacado na imagem acima. É esse código que será usado nas chamadas aos métodos da API de avaliação
 
-.. important::
-   Essa chamada retorna todos os serviços cadastrados para órgão. Caso seu serviço não esteja listado, procure o representante do seu órgão responsável pelo cadastro de serviços no Portal Gov.br.
+Essa chamada retorna todos os serviços cadastrados para órgão. Caso seu serviço não esteja listado (tanto em produção quanto em homologação), **procure o representante do seu órgão responsável pelo cadastro de serviços no Portal Gov.br**.
 
 .. attention::
    O código do SIORG **não deverá ser utilizado** nas chamadas aos métodos da API de Avaliação.
