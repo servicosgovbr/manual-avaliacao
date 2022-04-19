@@ -5,7 +5,7 @@ Passo a passo para avaliar um serviço
 --------------------------------------------------------
 Os métodos das APIs de avaliação necessitam de autenticação para uso (usuário e senha).
 
-Para solicitar sua credencial, basta enviar um email para apis@servicos.gov.br contendo as seguintes informações: órgão, serviço, nome da aplicação que utlizará a avaliação, telefone do responsável e email para ser utilizado como usuário das APIs.
+Para solicitar sua credencial, basta acessar a página temática https://www.gov.br/pt-br/temas/pagina-de-apoio-a-avaliacao-de-servicos-publicos-digitais.
 
 2. Descubra o código do órgão e o código dos seus serviços
 ----------------------------------------------------------
