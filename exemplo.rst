@@ -1,10 +1,10 @@
 Exemplos
 **************
 
-Aqui você encontra as URL e métodos necessários para registrar acompanamento e gerar o link da avaliação.
-Com esse arquivo, será possivel obter todos os códigos exigidos para sua avaliação. Preencha corretamente seu usuário e senha no momento da execução.
+Aqui você encontra as URL e métodos necessários para registrar acompanamentos e gerar o link da avaliação.
+Com esse arquivo, será possivel obter todos os códigos exigidos na integração do seu serviço. Preencha corretamente seu usuário e senha no momento da execução.
 
-Utilizando Python para nossas interações:
+Utilizamos Python para exemplificar e elucidar todas as dúuvidas:
 
 .. code-block:: python
 
