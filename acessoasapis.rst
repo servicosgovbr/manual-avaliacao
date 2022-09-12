@@ -16,7 +16,7 @@ Produção
 Ambiente web para desenvolvedores
 ---------------------------------
 
-Caso necessite é disponibilizado um Swagger para teste de chamadas aos métodos da API:
+Caso necessite, é disponibilizado um Swagger para teste de chamadas aos métodos da API:
 
 Swagger de testes
 ___________________________
