@@ -13,6 +13,7 @@ Manual de uso da API de Avaliação e Acompanhamento
    apresentacao
    passoapasso
    acessoasapis
+   exemplo
 
 .. toctree::
    :maxdepth: 2
