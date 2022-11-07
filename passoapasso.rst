@@ -13,7 +13,7 @@ Para a correta utilização da API de Avaliação é preciso obter os códigos v
 
 Siga os seguintes passos:
 
-**1- Descubra o ID do seu órgão no SIORG** https://siorg.planejamento.gov.br/siorg-cidadao-webapp/pages/listar_orgaos_estruturas/listar_orgaos_estruturas.jsf
+**1- Descubra o ID do seu órgão no SIORG** https://siorg.gov.br/siorg-cidadao-webapp/resources/app/consulta-estrutura.html
 
 .. figure:: _imagens/cod_siorg.png
    :scale: 100 %
