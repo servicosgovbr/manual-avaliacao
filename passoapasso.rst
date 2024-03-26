@@ -51,7 +51,7 @@ Essa chamada retorna todos os serviços cadastrados para órgão. Caso seu servi
    O código do SIORG **não deverá ser utilizado** nas chamadas aos métodos da API de Avaliação.
 
 .. important::
-   Todos os passos desse tópico estão relacionados ao ambiente da API de Serviços de produção. Para ambiente de teste substitua **servicos.gov.br** por **servicos.treina.nuvem.gov.br**.
+   Todos os passos desse tópico estão relacionados ao ambiente da API de Serviços de produção. Para ambiente de teste substitua **servicos.gov.br** por **h-api-servicos.estaleiro.serpro.gov.br**.
 
 3. Envie o(s) acompanhamento(s) durante a execução do serviço
 -------------------------------------------------------------

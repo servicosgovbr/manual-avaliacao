@@ -18,7 +18,7 @@ Endpoint de homologação
 
 .. code-block:: html
 
-   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/
+   https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/
 
 Endpoint de produção 
 ++++++++++++++++++++++
@@ -86,7 +86,7 @@ Veja um exemplo de acesso utilizando o cURL_
      "protocolo": "0001AC.20171212", \
      "servico": "47", \
      "situacaoEtapa": "Alguma descrição da situação." \
-     }' 'https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/'
+     }' 'https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/'
 
 Veja um exemplo de acesso utilizando Java
 
@@ -123,7 +123,7 @@ Veja um exemplo de acesso utilizando Java
         }
 
         private void enviarAcompanhamento() throws Exception {
-            String url = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/";
+            String url = "https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/";
             String payload = "{" +
                     "\"cpfCidadao\": \"99999999999\", " +
                     "\"dataEtapa\": \"10/10/2020\", " +
@@ -182,7 +182,7 @@ Endpoint de homologação
 
 .. code-block:: html
 
-   https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situacao
+   https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/situacao
 
 Endpoint de produção 
 ++++++++++++++++++++++
@@ -269,7 +269,7 @@ Veja um exemplo de acesso utilizando Java
         }
 
         private void enviarFechamentoReabertura() throws Exception {
-            String url = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situacao";
+            String url = "https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/situacao";
 
             String payload = "{" +
                     "\"cpfCidadao\": \"99999999999\", " +
@@ -313,5 +313,5 @@ status
 
 .. _cURl: https://curl.haxx.se/
 .. _`Login`: login.html
-.. _`API do Portal de Serviços`: https://www.servicos.gov.br/api/v1/docs
-.. _`verifique a documentação Swagger`: https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/swagger-ui.html
+.. _`API do Portal de Serviços`: https://h-api-servicos.estaleiro.serpro.gov.br/api/v1/docs
+.. _`verifique a documentação Swagger`: https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/swagger-ui.html

@@ -16,18 +16,18 @@ Utilizamos Python para exemplificar e elucidar todas as dúuvidas:
 	usuario = " " #Email que foi cadastrado para acessar a API
 	senha = " " #Senha liberada para o acesso a API
 
-	url_acompanhamento_testes = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/"
-	url_acompanhamento_situacao_testes = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/situacao"
-	url_avaliacao_teste = "https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/formulario"
+	url_acompanhamento_testes = "https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/"
+	url_acompanhamento_situacao_testes = "https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/situacao"
+	url_avaliacao_teste = "https://h-avaliacao-govbrapi.estaleiro.serpro.gov.br/api/avaliacao/formulario"
 
 	url_acompanhamento_producao = "https://acompanhamento.servicos.gov.br/api/acompanhamento/"
 	url_acompanhamento_situacao_producao = "https://acompanhamento.servicos.gov.br/api/acompanhamento/situacao"
 	url_avaliacao_producao = "https://avaliacao.servicos.gov.br/api/avaliacao/formulario?completo=false"
 
-	url_servico_teste = "https://servicos.treina.nuvem.gov.br/api/v1/servicos/orgao/"
+	url_servico_teste = "https://h-api-servicos.estaleiro.serpro.gov.br/api/v1/servicos/orgao/"
 	url_servico_producao = "https://servicos.gov.br/api/v1/servicos/orgao/"
 
-	url_cod_orgao_api_teste = "https://servicos.treina.nuvem.gov.br/api/v1/orgao/"
+	url_cod_orgao_api_teste = "https://h-api-servicos.estaleiro.serpro.gov.br/api/v1/orgao/"
 	url_cod_orgao_api_producao = "https://servicos.gov.br/api/v1/orgao/"
 
 	def create_session_pesquisar():

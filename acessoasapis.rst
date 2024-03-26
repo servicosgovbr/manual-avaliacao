@@ -5,8 +5,8 @@ Há dois ambientes para o uso da API de Avaliação de Serviços Públicos:
 
 Testes e homologação
 ----------------------------
-- **Acompanhamento:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/
-- **Avaliação:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/
+- **Acompanhamento:** https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/
+- **Avaliação:** https://h-avaliacao-govbrapi.estaleiro.serpro.gov.br/api/avaliacao/
 
 Produção
 ----------------------------
@@ -20,9 +20,9 @@ Caso necessite, é disponibilizado um Swagger para teste de chamadas aos método
 
 Swagger de testes
 ___________________________
-- **Acompanhamento:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/acompanhamento/swagger-ui.html
+- **Acompanhamento:** https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/swagger-ui.html
 
-- **Avaliação:** https://api-acompanha-avalia-servicos.dev.nuvem.gov.br/api/avaliacao/swagger-ui.html
+- **Avaliação:** https://h-avaliacao-govbrapi.estaleiro.serpro.gov.br/api/avaliacao/swagger-ui.html
 
 Swagger de produção
 ___________________________
