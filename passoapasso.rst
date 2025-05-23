@@ -5,7 +5,7 @@ Passo a passo para avaliar um serviço
 --------------------------------------------------------
 Os métodos das APIs de avaliação necessitam de autenticação para uso (usuário e senha).
 
-Para solicitar sua credencial, basta acessar a página temática https://solicitacao.servicos.gov.br/processos/iniciar?codServico=12141.
+Para solicitar sua credencial, basta acessar a página temática https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/transformacao-digital/central-de-qualidade.
 
 2. Descubra o código do órgão e o código dos seus serviços
 ----------------------------------------------------------
