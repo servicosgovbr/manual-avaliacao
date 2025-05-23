@@ -71,7 +71,7 @@ Os campos são fixos.
 Onde é feito o acompanhamento das avaliações enviadas pelos cidadãos?
 ------------------------------------------------------
 
-O acompanhamento é feito no gov.br/gestor.
+O acompanhamento é feito na https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/transformacao-digital/central-de-qualidade.
 
 .. _`Passo a Passo a passo para avaliar um serviço`: passoapasso.html
 .. _`verifique a documentação Swagger de Acompanhamento`: https://h-acompanhamento-govbrapi.np.estaleiro.serpro.gov.br/api/acompanhamento/swagger-ui.html
