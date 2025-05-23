@@ -74,8 +74,8 @@ Onde é feito o acompanhamento das avaliações enviadas pelos cidadãos?
 O acompanhamento é feito no gov.br/gestor.
 
 .. _`Passo a Passo a passo para avaliar um serviço`: passoapasso.html
-.. _`verifique a documentação Swagger de Acompanhamento`: https://h-acompanhamento-govbrapi.estaleiro.serpro.gov.br/api/acompanhamento/swagger-ui.html
-.. _`verifique a documentação Swagger de Avaliação`: https://h-avaliacao-govbrapi.estaleiro.serpro.gov.br/api/avaliacao/swagger-ui.html
+.. _`verifique a documentação Swagger de Acompanhamento`: https://h-acompanhamento-govbrapi.np.estaleiro.serpro.gov.br/api/acompanhamento/swagger-ui.html
+.. _`verifique a documentação Swagger de Avaliação`: https://h-avaliacao-govbrapi.np.estaleiro.serpro.gov.br/api/avaliacao/swagger-ui.html
 .. _`gov.br/ds`: http://gov.br/ds
 
 
