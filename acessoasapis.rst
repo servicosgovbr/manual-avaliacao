@@ -6,7 +6,7 @@ Há dois ambientes para o uso da API de Avaliação de Serviços Públicos:
 Testes e homologação
 ----------------------------
 - **Acompanhamento:** https://h-acompanhamento-govbrapi.np.estaleiro.serpro.gov.br/api/acompanhamento/
-- **Avaliação:** https://h-avaliacao-govbrapi.estaleiro.np.serpro.gov.br/api/avaliacao/
+- **Avaliação:** https://h-avaliacao-govbrapi.np.estaleiro.serpro.gov.br/api/avaliacao/
 
 Produção
 ----------------------------
