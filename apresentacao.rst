@@ -25,7 +25,7 @@ O formulário de avaliação deverá ser exibido na própria página do serviço
     :align: center
     :alt: Cidadão responde a avaliação.
 
-    O cidadão poderá avaliar até 7 dimensões predeterminadas
+    O cidadão poderá avaliar até 6 dimensões predeterminadas
 
 .. figure:: _imagens/nova_avaliacao_03.png
     :scale: 100 %
